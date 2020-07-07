@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa|Oswald|Russo+One&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/56c7ba5ce2.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/master.css" />
+  <link rel="stylesheet" href="css/slider.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <title>Создать режим</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <i class="fas fa-sun"></i>
+        <input type="range" class="brightness_slider">
+          <ul>
+            <a href="index.html" ><li>Встроенные режимы</li></a>
+            <a href="customize.html" class="current"><li>Изменяемые режимы</li></a>
+            <a href="strobo.html"><li>Стробоскоп</li></a>
+            <i class="fas fa-power-off" data-mode="on"></i>  
+          </ul>
+      </nav>
+    </div>
+</header>
+  <div class="container">
+    <h1>Изменяемые режимы</h1>
+  <div class="bloc_led">
+    <form>
+        <h2>Тип режима</h2>
+        <label><input type="radio" name="mode" value="1" class="radio" checked>Бегающий вперед</label><br>
+        <label><input type="radio" name="mode" value="2" class="radio">Бегающий вперед-назад</label><br>
+        <label><input type="radio" name="mode" value="3" class="radio">Заполнение</label><br>
+        <label><input type="radio" name="mode" value="4" class="radio">Мигающее заполнение</label><br>
+        <label><input type="radio" name="mode" value="5" class="radio" >Из середины</label><br>
+        <label><input type="radio" name="mode" value="6" class="radio">В середину</label><br>
+    </div>
+  </div>
+    <div class="container">
+      <div class="bloc_led">
+      <h2>Цвет</h2>
+      <div id="ColorPalet">
+        <input type="color" name="color" value="#ffffff" class="color">
+      </div>
+    </div>
+    </div>
+  <div class="container">
+  <input type="submit" name="" class="submit" value="Применить">
+  </form>
+  </div>
+  <script src="scripts/master.js"></script>
+</body>
+</html>
