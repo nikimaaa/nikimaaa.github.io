@@ -12,44 +12,68 @@
   <title>Создать режим</title>
 </head>
 <body>
-  <header>
+  <header class="main_menu">
     <div class="container">
       <nav>
         <i class="fas fa-sun"></i>
-        <input type="range" class="brightness_slider">
+        <input type="range" class="brightness_slider" min="5" max="255">
           <ul>
-            <a href="index.html" ><li>Встроенные режимы</li></a>
+            <a href="index.html"><li>Встроенные режимы</li></a>
             <a href="customize.html" class="current"><li>Изменяемые режимы</li></a>
             <a href="strobo.html"><li>Стробоскоп</li></a>
-            <i class="fas fa-power-off" data-mode="on"></i>  
+            <i class="fas fa-list"></i>
+            <i class="fas fa-power-off on"></i>
           </ul>
       </nav>
     </div>
 </header>
   <div class="container">
     <h1>Изменяемые режимы</h1>
-  <div class="bloc_led">
-    <form>
-        <h2>Тип режима</h2>
-        <label><input type="radio" name="mode" value="1" class="radio" checked>Бегающий вперед</label><br>
-        <label><input type="radio" name="mode" value="2" class="radio">Бегающий вперед-назад</label><br>
-        <label><input type="radio" name="mode" value="3" class="radio">Заполнение</label><br>
-        <label><input type="radio" name="mode" value="4" class="radio">Мигающее заполнение</label><br>
-        <label><input type="radio" name="mode" value="5" class="radio" >Из середины</label><br>
-        <label><input type="radio" name="mode" value="6" class="radio">В середину</label><br>
+    <h2>Цвет</h2>
+    <div class="change_block">
+      <input type="color" name="clrCust" value="#ffffff" class="color">
+      <span class="info_block rgb">R:255 G:255 B:255</span>
+      <span class="info_block hex">HEX: #ffffff</span>
+    </div>
+    <h2>Тип режима</h2>
+    <div class="radio_block" data-value="1" data-name="customizeMode">
+      <div class="indicator"></div>
+      <div class="text">Бегающий вперед</div>
+    </div>
+    <div class="radio_block" data-value="2" data-name="customizeMode">
+      <div class="indicator"></div>
+      <div class="text">Бегающий вперед-назад</div>
+    </div>
+    <div class="radio_block" data-value="3" data-name="customizeMode">
+      <div class="indicator_active"></div>
+      <div class="text">Заполнение</div>
+    </div>
+    <div class="radio_block" data-value="4" data-name="customizeMode">
+      <div class="indicator"></div>
+      <div class="text">Мигающее заполнение</div>
+    </div>
+    <div class="radio_block" data-value="5" data-name="customizeMode">
+      <div class="indicator"></div>
+      <div class="text">Из середины</div>
+    </div>
+    <div class="radio_block" data-value="6" data-name="customizeMode">
+      <div class="indicator"></div>
+      <div class="text">В середину</div>
     </div>
   </div>
-    <div class="container">
-      <div class="bloc_led">
-      <h2>Цвет</h2>
-      <div id="ColorPalet">
-        <input type="color" name="color" value="#ffffff" class="color">
+  <div class="hide_menu hide">
+    <header>
+      <div class="container">
+        <nav>
+            <ul>
+              <a href="index.html"><li>Встроенные режимы</li></a>
+              <a href="customize.html" class="current"><li>Изменяемые режимы</li></a>
+              <a href="strobo.html"><li>Стробоскоп</li></a>
+              <i class="fas fa-times"></i>
+            </ul>
+        </nav>
       </div>
-    </div>
-    </div>
-  <div class="container">
-  <input type="submit" name="" class="submit" value="Применить">
-  </form>
+  </header>
   </div>
   <script src="scripts/master.js"></script>
 </body>

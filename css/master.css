@@ -4,7 +4,7 @@
 }
 
 body {
-  font-family: "Amatic SC", cursive;
+  font-family: "Oswald", sans-serif;
   font-size: 15px;
   background: #232834;
   color: #fff;
@@ -19,11 +19,13 @@ body {
 h1 {
   margin-bottom: 20px;
   color: #FF8B3E;
+  
 }
 
 h2 {
-  margin-bottom: 10px;
+  margin: 20px 0;
   color: #5CCFE6;
+  
 }
 
 a {
@@ -36,7 +38,8 @@ a:hover {
 }
 
 .current {
-  color: #5CCFE6;
+  color: #fff;
+  text-shadow: 0 0 5px #5CCFE6, 0 0 10px #5CCFE6, 0 0 20px #5CCFE6, 0 0 40px #5CCFE6;
 }
 
 /* Navigation */
@@ -46,6 +49,7 @@ header{
   border-bottom: 1px solid #191E2A;
   padding: 10px 0 15px 0;
   margin-bottom: 20px;  
+  width: 100%;
 }
 
 nav {
@@ -56,17 +60,12 @@ nav {
 
 nav .fas{
   font-size: 30px;
-  color: #5CCFE6;
+  color: #fff;
   margin-right: 20px;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
-}
-
-nav .fa-power-off{
-  color: #fff;
   text-shadow: 0 0 5px #5CCFE6, 0 0 10px #5CCFE6, 0 0 20px #5CCFE6, 0 0 40px #5CCFE6;
 }
-
 
 nav ul {
   list-style-type: none;
@@ -81,120 +80,146 @@ nav li {
   margin-right: 30px;
 }
 
-/* ------------------------Color and other-------------------------- */
-
-.mode_block_row{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+nav .fa-list{
+  display: none;
 }
 
-.mode_block_inner {
-    width: 350px;
-    height: 80px;
+/* On off switcher */
+
+nav .on{
+  color: #fff;
+  text-shadow: 0 0 5px #5CCFE6, 0 0 10px #5CCFE6, 0 0 20px #5CCFE6, 0 0 40px #5CCFE6;
+  transform: rotate(0deg);
+}
+
+nav .off{
+  color: #5CCFE6;
+  text-shadow: none;
+  transform: rotate(-360deg);
+}
+
+/* Radio blocks */
+
+.radio_block{
   border: 1px solid #191E2A;
   background-color: #1F2430;
-  border-radius: 10px;
-  padding: 15px 15px 15px 20px;
+  border-radius: 35px;
   margin-top: 30px;
-  font-family: "Amatic SC", cursive;
+  display: flex;
+  padding: 10px;
 }
 
-.mode_block_inner:hover {
-    background-color:#191E2A ;
+.radio_block:hover{
+  background-color:#191E2A ;
 }
 
-.mode_block_inner h2{
- text-align: center;
+.radio_block .indicator{
+  background-color: #1F2430;
+  width: 100px;
+  background: #fff;
+  border-radius: 15px;
+  margin: 10px;
 }
 
-.clr {
-  /*  Отображение цветов  */
-  width: 20px;
-  height: 20px;
-  border-radius: 20px;
-  border: 1px solid #545e62;
-  margin: 5px;
-  display: inline-block;
+.radio_block .indicator_active{
+  background-color: #1F2430;
+  width: 100px;
+  background: #fff;
+  box-shadow: 0 0 5px #5CCFE6, 0 0 10px #5CCFE6, 0 0 20px #5CCFE6;
+  border-radius: 15px;
+  margin: 10px;
 }
+
+.radio_block .text{
+  font-size: 20px;
+  margin-left: 30px;
+  
+}
+
 
 /* -----------------------------For form------------------------------- */
 
 .color {
-  border: 0;
+  border: none;
   height: 28px;
-  width: 25px;
+  width: 200px;
   background-color: #3f4a4e;
-  margin-top: 10px;
+
+  outline: none;
+  overflow: hidden;
+  border-radius: 28px;
 }
 
-.radio {
-  margin: 10px 10px 10px 0;
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;    
 }
 
-.submit:hover {
-  background-color: #d4d6d7;
-  color: #2a363b;
-}
-.submit {
-  padding: 10px;
-  border: 2px solid #d4d6d7;
-  display: inline-block;
+input[type="color"]::-webkit-color-swatch {
+  border: none;  
 
-  margin-top: 10px 0 500px 0;
-  color: #d4d6d7;
-  border-radius: 10px;
-  transition: background 0.3s linear;
-  background-color: #2a363b;
-  font-family: "Amatic SC", cursive;
-  font-size: 15px;
 }
 
-.numcol {
-  width: 30px;
+
+/* firefox */
+input[type=color]::-moz-focus-inner {
+  border: none;
+  padding: 0;
+
 }
 
-#chek {
-  margin-right: 10px;
+input[type=color]::-moz-color-swatch {
+  border: none;
 }
 
-.buttoncon {
-  text-align: center;
+.change_block{
+  border: 1px solid #191E2A;
+  background-color: #1F2430;
+  display: inline-blocks;
+  padding: 15px 0 10px 15px;
+  border-radius: 32px;  
+  display: flex;
+  align-items: center;
 }
 
-.range {
-  width: 310px;
-  margin-bottom: 20px;
+.info_block{
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.hide_menu header{
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  font-size: 20px;
+}
+
+
+.hide{
+  display: none;
 }
 
 @media (max-width: 1400px) {
-  h1 {
-    padding-left: 10px;
+  nav{
+    padding: 0 20px;
   }
-  nav {
-    padding-right: 20px;
+  nav .fas{
+    margin-right: 20px;
   }
-  .submit {
-    margin-left: 20px;
+  nav .fas:last-child{
+    margin-right: 0px;
   }
 }
 
-@media (max-width: 1280px) {
-  .range {
-    width: 95%;
+@media (max-width: 940px){
+  .main_menu a{
+    display: none;
   }
 
-  
+  nav .fa-list{
+    display: inline-block;
+  }
 }
 
-@media (max-width: 1150px) {
-    nav li {
-      display: block;
-      font-size: 30px;
-      margin-left: 30px;
-    }
 
-    .mode_block_inner{
-        width: 100%;
-    }
-  }

@@ -16,88 +16,63 @@
     <link rel="stylesheet" href="css/slider.css" />
     <title>Стробоскоп</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-      $.ajaxSetup({ timeout: 1000 });
-
-      function bri(pos) {
-        $.get("/?brightnes=" + pos + "&");
-        {
-          Connection: close;
-        }
-      }
-
-      function frequncy(pos) {
-        $.ajaxSetup({ timeout: 1000 });
-        $.get("/?frequncy=" + pos);
-        {
-          Connection: close;
-        }
-        document.getElementById("bpm").innerHTML = "bpm: " + pos;
-      }
-    </script>
   </head>
 
   <body>
-    <header>
+    <header class="main_menu">
       <div class="container">
         <nav>
           <i class="fas fa-sun"></i>
-          <input type="range" class="brightness_slider" />
-          <ul>
-            <a href="index.html"><li>Встроенные режимы</li></a>
-            <a href="customize.html"><li>Изменяемые режимы</li></a>
-            <a href="strobo.html" class="current"><li>Стробоскоп</li></a>
-            <i class="fas fa-power-off" data-mode="on"></i>
-          </ul>
+          <input type="range" class="brightness_slider" min="5" max="255">
+            <ul>
+              <a href="index.html"><li>Встроенные режимы</li></a>
+              <a href="customize.html"><li>Изменяемые режимы</li></a>
+              <a href="strobo.html" class="current"><li>Стробоскоп</li></a>
+              <i class="fas fa-list"></i>
+              <i class="fas fa-power-off on"></i>
+            </ul>
         </nav>
       </div>
-    </header>
+  </header>
 
     <div class="container">
       <h1>Стробоскоп</h1>
-      <div class="bloc_led">
-        <h2>Яркость</h2>
-        <input
-          type="range"
-          name="brightnes"
-          value=""
-          class="range"
-          min="0"
-          max="150"
-          onchange="bri(this.value)"
-        /><br />
-      </div>
-    </div>
 
     <div class="container">
-      <div class="bloc_led">
-        <h2>Частота мигания</h2>
+      <h2>Частота мигания</h2>
+        <div class="change_block">
+        
         <input
           type="range"
-          name="brightnes"
+          name="frequncy"
           value="120"
-          class="range"
           min="20"
           max="200"
-          onchange="frequncy(this.value)"
-        /><br />
-        <span id="bpm">bpm: 120</span>
+        /><span class="info_block bpm">BPM: 120</span>
       </div>
-    </div>
-
-    <form>
-      <div class="container">
-        <div class="bloc_led">
-          <h2>Цвет</h2>
-          <input
-            type="color"
-            name="colorStobo"
-            value="#ffffff"
-            class="color"
-          /><br />
+        <h2>Цвет</h2>
+        <div class="change_block">
+          <input type="color" name="clrStrobo" value="#ffffff" class="color">
+          <span class="info_block rgb">R:255 G:255 B:255</span>
+          <span class="info_block hex">HEX: #ffffff</span>
         </div>
       </div>
-    </form>
+    </div>
+    <div class="hide_menu hide">
+      <header>
+        <div class="container">
+          <nav>
+              <ul>
+                <a href="index.html"><li>Встроенные режимы</li></a>
+                <a href="customize.html"><li>Изменяемые режимы</li></a>
+                <a href="strobo.html" class="current"><li>Стробоскоп</li></a>
+                <i class="fas fa-times"></i>
+              </ul>
+          </nav>
+        </div>
+    </header>
+    </div>
+
     <script src="scripts/master.js"></script>
   </body>
 </html>

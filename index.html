@@ -12,44 +12,60 @@
     <link rel="stylesheet" href="css/slider.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Встроенные режимы</title>
+    <script src="scripts/master.js"></script>
   </head>
   <body>
-    <header>
+    <header class="main_menu">
       <div class="container">
         <nav>
           <i class="fas fa-sun"></i>
-          <input type="range" class="brightness_slider">
+          <input type="range" class="brightness_slider" min="5" max="255">
             <ul>
               <a href="index.html" class="current"><li>Встроенные режимы</li></a>
               <a href="customize.html"><li>Изменяемые режимы</li></a>
               <a href="strobo.html"><li>Стробоскоп</li></a>
-              <i class="fas fa-power-off" data-mode="on"></i>
+              <i class="fas fa-list"></i>
+              <i class="fas fa-power-off on"></i>
             </ul>
         </nav>
       </div>
   </header>
     <div class="container">
       <h1>Встроенные режимы</h1>
-      <div class="mode_block_row">
-        <div class="mode_block_inner" data-mode="?mode=1">
-          <h2>Радуга</h2>
+        <div class="radio_block" data-value="1" data-name="builtinMode">
+          <div class="indicator_active"></div>
+          <div class="text">Радуга</div>
         </div>
-        <div class="mode_block_inner" data-mode="?mode=2">
-          <h2>Смена цветов всей ленты</h2>
+        <div class="radio_block" data-value="2" data-name="builtinMode">
+          <div class="indicator"></div>
+          <div class="text">Смена цветов</div>
         </div>
-        <div class="mode_block_inner" data-mode="?mode=3">
-          <h2>Появление случайных цветов</h2>
+        <div class="radio_block" data-value="3" data-name="builtinMode">
+          <div class="indicator"></div>
+          <div class="text">Случайные цвета</div>
         </div>
-      </div>
-      <div class="mode_block_row">
-        <div class="mode_block_inner" data-mode="?mode=4">
-          <h2>RGB пропеллер</h2>
+        <div class="radio_block" data-value="4" data-name="builtinMode">
+          <div class="indicator"></div>
+          <div class="text">RGB</div>
         </div>
-        <div class="mode_block_inner" data-mode="?mode=5">
-          <h2>Случайные вспышки</h2>
+        <div class="radio_block" data-value="5" data-name="builtinMode">
+          <div class="indicator"></div>
+          <div class="text">Вспышки</div>
         </div>
-      </div>
     </div>
-    <script src="scripts/master.js"></script>
+    <div class="hide_menu hide">
+      <header>
+        <div class="container">
+          <nav>
+              <ul>
+                <a href="index.html" class="current"><li>Встроенные режимы</li></a>
+                <a href="customize.html"><li>Изменяемые режимы</li></a>
+                <a href="strobo.html"><li>Стробоскоп</li></a>
+                <i class="fas fa-times"></i>
+              </ul>
+          </nav>
+        </div>
+    </header>
+    </div>
   </body>
 </html>
